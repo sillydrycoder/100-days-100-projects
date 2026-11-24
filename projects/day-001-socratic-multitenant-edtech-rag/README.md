@@ -88,10 +88,8 @@ This repository ships with a zero-dependency [Dockerfile](Dockerfile) exposing p
 ## Interactive Console Walkthrough
 
 Once `./run.sh` is running, open `http://127.0.0.1:8000`:
-1. **Tab 1 — Socratic Chat & Vision Lab:** Click **Diagram + Vision Cache** twice to watch Turn 1 invoke `vision-vlm` (`$0.00380`) and Turn 2 hit the tenant Vision Cache (`vision-cache+text-fast`, `$0.00028` — **92.6% saved!**). Click **FERPA PII Redaction** and **Cross-Tenant Isolation Check** to inspect the live 7-node execution trace.
-2. **Tab 2 — Multi-Tenant & CSV Onboarding:** Switch schools in the top-right RLS selector, import bulk CSV rosters, create a brand-new isolated school tenant, and inspect `schema/postgres_rls.sql`.
-3. **Tab 3 — Hierarchical Textbook RAG:** Inspect intact atomic `PROSE`, `TABLE`, `EQUATION`, and `DIAGRAM` chunks and ingest a new chapter live into only the active school.
-4. **Tab 4 — Seasonal Scale-to-Zero Simulator:** Adjust sliders from 2,000 → 100,000 students across 50 schools to compare 24/7 dedicated GPUs vs. scale-to-zero serverless economics.
+1. **Student Tutor:** Select a school in the top-right switcher, ask a textbook question or attach a class diagram, and watch the tutor guide you step-by-step (`Hint 1 / 3` → `Hint 2 / 3` → `Hint 3 / 3`) with exact textbook citations on the right.
+2. **School Admin:** View or bulk-upload CSV teacher/student rosters, create a new isolated school tenant, and upload new textbook chapters (with intact LaTeX equations, tables, and diagrams) into that school's private library.
 
 ---
 

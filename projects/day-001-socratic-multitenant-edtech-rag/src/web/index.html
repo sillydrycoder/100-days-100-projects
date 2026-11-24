@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Multi-Tenant Socratic EdTech RAG &amp; Vision-Routing Console</title>
+  <title>Multi-Tenant AI Textbook Tutor</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="topbar">
     <div class="wrap topbar-inner">
       <div class="brand">
-        <span class="tag mono">DAY 001 · ARCHITECTURE DEMO</span>
-        <h1>Multi-Tenant Socratic EdTech RAG &amp; Vision Tutor</h1>
+        <span class="tag mono">DAY 001 · AI TEXTBOOK TUTOR</span>
+        <h1>Multi-Tenant AI Textbook &amp; Diagram Tutor</h1>
       </div>
       <div class="tenant-switcher">
-        <label for="school-select" class="mono">ACTIVE TENANT (RLS SCOPE)</label>
+        <label for="school-select" class="mono">ACTIVE SCHOOL</label>
         <div class="switcher-row">
           <select id="school-select"></select>
           <span id="mode-pill" class="mode-pill mono">DEMO_MODE</span>
@@ -25,31 +25,29 @@
 
   <nav class="tabs-bar">
     <div class="wrap tabs-inner">
-      <button class="tab-btn active" data-tab="tutor">1. Socratic Chat &amp; Vision Lab</button>
-      <button class="tab-btn" data-tab="onboarding">2. Multi-Tenant &amp; CSV Onboarding</button>
-      <button class="tab-btn" data-tab="rag">3. Hierarchical Textbook RAG</button>
-      <button class="tab-btn" data-tab="cost">4. Seasonal Scale-to-Zero Simulator</button>
+      <button class="tab-btn active" data-tab="tutor">Student Tutor</button>
+      <button class="tab-btn" data-tab="admin">School Admin</button>
     </div>
   </nav>
 
   <main class="wrap main-grid">
-    <!-- TAB 1: SOCRATIC CHAT & VISION LAB -->
+    <!-- TAB 1: STUDENT TUTOR -->
     <section id="tab-tutor" class="tab-panel active">
       <div class="two-col">
         <div class="card chat-card">
           <div class="card-head">
             <div>
-              <h2>Socratic Student Companion</h2>
-              <p class="sub">Guides students step-by-step (Hint 1 → 3) without dumping answers. Send the same diagram twice to see Vision-to-JSON cache savings.</p>
+              <h2>Ask Your Tutor</h2>
+              <p class="sub">Guides you step-by-step using your school's assigned textbooks and diagrams without giving away the final answer.</p>
             </div>
-            <button id="new-session-btn" class="btn btn-ghost btn-sm" type="button">New Session</button>
+            <button id="new-session-btn" class="btn btn-ghost btn-sm" type="button">New Chat</button>
           </div>
 
           <div class="presets-row">
-            <span class="mono preset-label">QUICK TESTS:</span>
-            <button id="preset-diagram" class="chip" type="button">Diagram + Vision Cache</button>
-            <button id="preset-pii" class="chip" type="button">FERPA PII Redaction</button>
-            <button id="preset-isolation" class="chip" type="button">Cross-Tenant Isolation Check</button>
+            <span class="mono preset-label">TRY AN EXAMPLE:</span>
+            <button id="preset-diagram" class="chip" type="button">Explain attached graph</button>
+            <button id="preset-concept" class="chip" type="button">Ask a textbook question</button>
+            <button id="preset-other-school" class="chip" type="button">Ask outside school curriculum</button>
           </div>
 
           <div id="chat-log" class="chat-log"></div>
@@ -57,43 +55,44 @@
           <form id="chat-form" class="chat-form">
             <div class="form-row">
               <label class="field-sm">
-                <span class="mono">Attach Textbook Diagram (Optional)</span>
+                <span class="mono">Attach Class Diagram (Optional)</span>
                 <select id="diagram-select"></select>
               </label>
               <label class="field-sm">
-                <span class="mono">Student Roster ID</span>
+                <span class="mono">Student ID</span>
                 <input id="student-ref-input" type="text" value="STU-201" />
               </label>
             </div>
             <div class="compose-row">
-              <input id="query-input" type="text" placeholder="Ask a textbook or diagram question..." required />
-              <button class="btn btn-primary" type="submit">Send Turn</button>
+              <input id="query-input" type="text" placeholder="Type your question from class or homework..." required />
+              <button class="btn btn-primary" type="submit">Ask</button>
             </div>
           </form>
         </div>
 
-        <aside class="card telemetry-card">
+        <aside class="card sources-card">
           <div class="card-head">
             <div>
-              <h2>Live Orchestration Telemetry</h2>
-              <p class="sub">7-node stateful workflow trace, model routing cost &amp; tenant citations</p>
+              <h2>Textbook Sources</h2>
+              <p class="sub">Chapters, formulas, and diagrams referenced for this answer</p>
             </div>
+            <span id="hint-badge" class="badge mono hidden">Hint 1 / 3</span>
           </div>
-          <div id="telemetry-panel" class="telemetry-body">
-            <p class="muted">Send a student question (or click a Quick Test chip) to inspect the live LangGraph-style execution trace, PII redaction, model routing decision, and grounded curriculum citations.</p>
+          <div id="sources-panel" class="sources-body">
+            <p class="muted">Ask a question to see the exact textbook sections and diagrams your school's tutor uses to guide you.</p>
           </div>
         </aside>
       </div>
     </section>
 
-    <!-- TAB 2: MULTI-TENANT & CSV ONBOARDING -->
-    <section id="tab-onboarding" class="tab-panel">
+    <!-- TAB 2: SCHOOL ADMIN -->
+    <section id="tab-admin" class="tab-panel">
       <div class="two-col">
         <div class="card">
           <div class="card-head">
             <div>
-              <h2>School Roster (Strict Tenant Scope)</h2>
-              <p class="sub">Only teachers and students belonging to the active school tenant are visible.</p>
+              <h2>School Roster</h2>
+              <p class="sub">Teachers and students enrolled in the currently selected school.</p>
             </div>
             <span id="roster-count" class="badge mono">0 users</span>
           </div>
@@ -106,67 +105,47 @@
             </table>
           </div>
 
-          <h3 class="subhead">Bulk CSV Upload (Teachers &amp; Students)</h3>
-          <textarea id="csv-input" rows="5" class="mono code-area">external_id,role,grade_level,class_section,display_name,email
+          <h3 class="subhead">Import Students &amp; Teachers (CSV)</h3>
+          <textarea id="csv-input" rows="4" class="mono code-area">external_id,role,grade_level,class_section,display_name,email
 STU-901,student,Grade 10,10-A Physics,Zara Malik,z.malik@oakridge.example.edu
 TCH-902,teacher,Grade 10,10-A Physics,Prof. Kenji Sato,k.sato@oakridge.example.edu</textarea>
           <div class="action-row">
-            <button id="import-csv-btn" class="btn btn-primary" type="button">Import CSV Into Active School</button>
+            <button id="import-csv-btn" class="btn btn-primary" type="button">Upload CSV Roster</button>
             <span id="csv-status" class="mono muted"></span>
           </div>
-        </div>
 
-        <div class="card">
-          <div class="card-head">
-            <div>
-              <h2>Onboard New School Tenant</h2>
-              <p class="sub">Shared schema + PostgreSQL Row-Level Security (RLS) handles 50+ schools with zero per-tenant DevOps overhead.</p>
-            </div>
-          </div>
+          <h3 class="subhead">Add New School</h3>
           <form id="school-form" class="stack-form">
+            <div class="form-row">
+              <label>
+                <span class="mono">School ID</span>
+                <input id="new-school-id" type="text" placeholder="sch_horizon" required />
+              </label>
+              <label>
+                <span class="mono">School Name</span>
+                <input id="new-school-name" type="text" placeholder="Horizon Academy" required />
+              </label>
+            </div>
             <label>
-              <span class="mono">School Tenant ID</span>
-              <input id="new-school-id" type="text" placeholder="sch_horizon" required />
+              <span class="mono">Curriculum</span>
+              <input id="new-school-curr" type="text" placeholder="IB / AP / IGCSE" required />
             </label>
-            <label>
-              <span class="mono">School Name</span>
-              <input id="new-school-name" type="text" placeholder="Horizon Academy" required />
-            </label>
-            <label>
-              <span class="mono">Curriculum Standard</span>
-              <input id="new-school-curr" type="text" placeholder="IB Diploma / Common Core" required />
-            </label>
-            <button class="btn btn-secondary" type="submit">Create Isolated School Tenant</button>
-            <span id="school-status" class="mono muted"></span>
+            <div class="action-row">
+              <button class="btn btn-secondary" type="submit">Create School</button>
+              <span id="school-status" class="mono muted"></span>
+            </div>
           </form>
-
-          <h3 class="subhead">Production PostgreSQL + pgvector RLS Policy</h3>
-          <pre id="rls-sql-box" class="sql-box mono">Loading schema/postgres_rls.sql...</pre>
-        </div>
-      </div>
-    </section>
-
-    <!-- TAB 3: HIERARCHICAL TEXTBOOK RAG -->
-    <section id="tab-rag" class="tab-panel">
-      <div class="two-col">
-        <div class="card">
-          <div class="card-head">
-            <div>
-              <h2>Parsed Hierarchical Curriculum Chunks</h2>
-              <p class="sub">Tables, LaTeX equations, and diagrams stay atomic with Book → Chapter → Section → Page breadcrumbs.</p>
-            </div>
-            <span id="chunk-count" class="badge mono">0 chunks</span>
-          </div>
-          <div id="chunks-list" class="chunks-list"></div>
         </div>
 
         <div class="card">
           <div class="card-head">
             <div>
-              <h2>Ingest Textbook Chapter (Active School Only)</h2>
-              <p class="sub">Supports headings (<code>#</code>, <code>##</code>), <code>[page: N]</code>, LaTeX <code>$$...$$</code>, Markdown tables, and <code>[diagram: ...]</code>.</p>
+              <h2>School Textbooks &amp; Curriculum</h2>
+              <p class="sub">Upload chapters with formulas, tables, and diagrams for this school only.</p>
             </div>
+            <span id="chunk-count" class="badge mono">0 sections</span>
           </div>
+
           <form id="ingest-form" class="stack-form">
             <div class="form-row">
               <label>
@@ -183,8 +162,8 @@ TCH-902,teacher,Grade 10,10-A Physics,Prof. Kenji Sato,k.sato@oakridge.example.e
               <input id="book-grade" type="text" value="Grade 11" required />
             </label>
             <label>
-              <span class="mono">Structured Chapter Content</span>
-              <textarea id="book-content" rows="10" class="mono code-area"># Chapter 6: Ideal Gas Law
+              <span class="mono">Chapter Content</span>
+              <textarea id="book-content" rows="7" class="mono code-area"># Chapter 6: Ideal Gas Law
 [page: 184]
 
 ## Section 6.1: Pressure, Volume &amp; Temperature
@@ -194,55 +173,21 @@ $$
 P V = n R T, \qquad R = 0.0821\text{ L}\cdot\text{atm}/(\text{mol}\cdot\text{K})
 $$
 
-| Variable | Meaning | SI / Lab Unit |
+| Variable | Meaning | Unit |
 | :--- | :--- | :--- |
 | P | Pressure | atm or kPa |
 | V | Volume | Liters (L) |
-| T | Absolute Temperature | Kelvin (K = C + 273.15) |
-
-[diagram: Fig 6.1 | Boyle's Law Isotherm Curve | Hyperbolic P-vs-V curve at constant T showing P halves when V doubles.]</textarea>
+| T | Temperature | Kelvin (K) |</textarea>
             </label>
-            <button class="btn btn-primary" type="submit">Parse &amp; Index for Active School</button>
-            <span id="ingest-status" class="mono muted"></span>
+            <div class="action-row">
+              <button class="btn btn-primary" type="submit">Add Chapter to School</button>
+              <span id="ingest-status" class="mono muted"></span>
+            </div>
           </form>
-        </div>
-      </div>
-    </section>
 
-    <!-- TAB 4: SEASONAL SCALE-TO-ZERO COST SIMULATOR -->
-    <section id="tab-cost" class="tab-panel">
-      <div class="card">
-        <div class="card-head">
-          <div>
-            <h2>Seasonal Infrastructure &amp; Inference Cost Simulator</h2>
-            <p class="sub">Model the 200 active school days vs. 165 idle vacation days constraint from 2,000 MVP students up to 100,000 students across 50 schools.</p>
-          </div>
+          <h3 class="subhead">Indexed Sections in Active School</h3>
+          <div id="chunks-list" class="chunks-list"></div>
         </div>
-
-        <div class="sliders-grid">
-          <label class="slider-box">
-            <div class="slider-top"><span class="mono">Total Students</span><strong id="val-students" class="mono">100,000</strong></div>
-            <input id="sl-students" type="range" min="2000" max="100000" step="2000" value="100000" />
-          </label>
-          <label class="slider-box">
-            <div class="slider-top"><span class="mono">Schools (Tenants)</span><strong id="val-schools" class="mono">50</strong></div>
-            <input id="sl-schools" type="range" min="1" max="100" step="1" value="50" />
-          </label>
-          <label class="slider-box">
-            <div class="slider-top"><span class="mono">Active School Days / Yr</span><strong id="val-days" class="mono">200</strong></div>
-            <input id="sl-days" type="range" min="140" max="260" step="5" value="200" />
-          </label>
-          <label class="slider-box">
-            <div class="slider-top"><span class="mono">Vision Diagram Share (%)</span><strong id="val-vision" class="mono">18%</strong></div>
-            <input id="sl-vision" type="range" min="5" max="45" step="1" value="18" />
-          </label>
-          <label class="slider-box">
-            <div class="slider-top"><span class="mono">Vision-to-JSON Cache Hit (%)</span><strong id="val-cache" class="mono">70%</strong></div>
-            <input id="sl-cache" type="range" min="0" max="90" step="5" value="70" />
-          </label>
-        </div>
-
-        <div id="cost-results" class="cost-grid"></div>
       </div>
     </section>
   </main>
