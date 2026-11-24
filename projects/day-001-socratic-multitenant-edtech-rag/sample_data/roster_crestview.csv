@@ -1,0 +1,4 @@
+external_id,role,grade_level,class_section,display_name,email
+TCH-501,teacher,Grade 9,9-A Biology,Mr. Omar Farooq,o.farooq@crestview.example.edu
+STU-601,student,Grade 9,9-A Biology,Sofia Patel,s.patel@crestview.example.edu
+STU-602,student,Grade 9,9-B Chemistry,Daniel Cho,d.cho@crestview.example.edu

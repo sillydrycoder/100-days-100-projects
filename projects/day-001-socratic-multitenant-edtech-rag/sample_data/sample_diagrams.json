@@ -1,0 +1,67 @@
+[
+  {
+    "diagram_id": "diag_vt_graph",
+    "school_id": "sch_oakridge",
+    "title": "Velocity-Time Graph (0–10s Trapezoid Motion)",
+    "subject": "Physics",
+    "description": "A velocity-time graph rising linearly from (0s, 0 m/s) to (4s, 20 m/s), staying flat until (8s, 20 m/s), then dropping linearly to (10s, 0 m/s).",
+    "structured_extraction": {
+      "diagram_type": "velocity_time_graph",
+      "x_axis": "Time (seconds, 0 to 10)",
+      "y_axis": "Velocity (m/s, 0 to 20)",
+      "segments": [
+        {"label": "A (0-4s)", "shape": "triangle", "slope_accel": 5.0, "area_displacement_m": 40.0},
+        {"label": "B (4-8s)", "shape": "rectangle", "slope_accel": 0.0, "area_displacement_m": 80.0},
+        {"label": "C (8-10s)", "shape": "triangle", "slope_accel": -10.0, "area_displacement_m": 20.0}
+      ],
+      "key_concept": "Area under a velocity-time curve equals total displacement; slope equals acceleration.",
+      "socratic_checkpoints": [
+        "Notice the graph has three simple geometric regions between the line and the time axis. What two shapes do you see?",
+        "How do you compute the area of the first triangle from t=0s to t=4s (base = 4s, height = 20 m/s)?",
+        "Now add the middle rectangle (4s to 8s) and the final triangle (8s to 10s) — what sum do you get for total displacement?"
+      ],
+      "target_numeric_answer": "140 m"
+    }
+  },
+  {
+    "diagram_id": "diag_incline_fbd",
+    "school_id": "sch_oakridge",
+    "title": "Free-Body Diagram: 4 kg Block on 30° Frictionless Ramp",
+    "subject": "Physics",
+    "description": "A 4 kg block resting on a smooth 30-degree inclined plane showing weight vector mg downward and normal force N perpendicular to the ramp.",
+    "structured_extraction": {
+      "diagram_type": "free_body_diagram",
+      "mass_kg": 4.0,
+      "angle_deg": 30.0,
+      "friction": false,
+      "key_concept": "Resolve gravitational weight mg into parallel (mg sin theta) and perpendicular (mg cos theta) components.",
+      "socratic_checkpoints": [
+        "Weight mg acts straight down, not along the ramp. Which trig function (sin or cos) gives the component pulling the block parallel down a 30-degree slope?",
+        "Using sin(30°) = 0.5 and g = 9.8 m/s², what is the parallel force mg·sin(30°) for a 4 kg block?",
+        "Divide that net force by the 4 kg mass (or use a = g·sin(30°)) — does the mass even affect the acceleration on a frictionless ramp?"
+      ],
+      "target_numeric_answer": "4.9 m/s^2 (F_parallel = 19.6 N)"
+    }
+  },
+  {
+    "diagram_id": "diag_enzyme_curve",
+    "school_id": "sch_crestview",
+    "title": "Enzyme Reaction Rate vs. Temperature Curve",
+    "subject": "Biology",
+    "description": "An asymmetric reaction rate curve peaking at 37 C and plunging sharply toward zero between 42 C and 55 C.",
+    "structured_extraction": {
+      "diagram_type": "scientific_line_chart",
+      "x_axis": "Temperature (0 to 65 C)",
+      "y_axis": "Reaction Rate (arbitrary units)",
+      "peak_x": "37 C",
+      "sharp_drop_range": "42 C to 55 C",
+      "key_concept": "Kinetic energy increases collisions up to 37 C; higher heat breaks bonds and denatures the active site.",
+      "socratic_checkpoints": [
+        "Look at the shape on the left vs. right of the 37 C peak. Why do you think the right side drops off so much steeper than the left side rises?",
+        "What happens to the weak hydrogen bonds holding an enzyme's 3D active site together when thermal energy gets too high?",
+        "If the active site permanently changes shape, why can the substrate no longer form an enzyme-substrate complex?"
+      ],
+      "target_numeric_answer": "Denaturation of the active site above 37 C"
+    }
+  }
+]

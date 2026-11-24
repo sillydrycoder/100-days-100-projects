@@ -1,0 +1,5 @@
+external_id,role,grade_level,class_section,display_name,email
+TCH-101,teacher,Grade 10,10-A Physics,Dr. Maya Lin,m.lin@oakridge.example.edu
+STU-201,student,Grade 10,10-A Physics,Aiden Brooks,a.brooks@oakridge.example.edu
+STU-202,student,Grade 10,10-A Physics,Nadia Hassan,n.hassan@oakridge.example.edu
+STU-203,student,Grade 10,10-B Algebra,Lucas Reed,l.reed@oakridge.example.edu

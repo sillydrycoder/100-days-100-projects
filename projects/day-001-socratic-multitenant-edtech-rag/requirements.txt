@@ -1,0 +1,2 @@
+# Add project-specific pinned packages below (e.g., langgraph, langchain-core, fastapi, uvicorn, streamlit).
+# Leave empty or minimal while using the zero-dependency DEMO_MODE baseline.

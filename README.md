@@ -1,6 +1,6 @@
 # 100 Days, 100 Projects — Production Proof-of-Work Engine
 
-![Progress](https://img.shields.io/badge/Progress-0%20%2F%20100%20Shipped-3b82f6?style=for-the-badge)
+![Progress](https://img.shields.io/badge/Progress-1%20%2F%20100%20Shipped-10b981?style=for-the-badge)
 
 > **Muhammad Ali (`@sillydrycoder`)** — *AI Automation & Full-Stack Engineer | Python, LangGraph, RAG, Laravel*
 >
@@ -24,7 +24,7 @@ No toy calculators or copy-paste tutorials. Every project in this catalog is der
 
 | Service Pillar | Progress | Completed | Focus Stack | Filtered Hub Link |
 | :--- | :--- | :-: | :--- | :--- |
-| **AI Agents, LangGraph & RAG Pipelines** | `░░░░░░░░░░` (0.0%) | **0** / 25 | `LangGraph`, `LangChain`, `RAG`, `Artificial Intelligence` | [View Pillar](https://sillydrycoder.github.io/100-days-100-projects/?category=ai-agents-rag) |
+| **AI Agents, LangGraph & RAG Pipelines** | `░░░░░░░░░░` (4.0%) | **1** / 25 | `LangGraph`, `LangChain`, `RAG`, `Artificial Intelligence` | [View Pillar](https://sillydrycoder.github.io/100-days-100-projects/?category=ai-agents-rag) |
 | **Full-Stack SaaS (React/Next.js + Python)** | `░░░░░░░░░░` (0.0%) | **0** / 20 | `React`, `Next.js`, `FastAPI`, `Django` | [View Pillar](https://sillydrycoder.github.io/100-days-100-projects/?category=fullstack-saas-nextjs) |
 | **Laravel & PHP Backend Systems** | `░░░░░░░░░░` (0.0%) | **0** / 16 | `Laravel`, `PHP`, `SaaS Development`, `Web Development` | [View Pillar](https://sillydrycoder.github.io/100-days-100-projects/?category=laravel-saas-backend) |
 | **Stripe Billing, Webhooks & API Middleware** | `░░░░░░░░░░` (0.0%) | **0** / 14 | `Stripe`, `API Integration`, `SaaS Development`, `Python` | [View Pillar](https://sillydrycoder.github.io/100-days-100-projects/?category=stripe-api-integrations) |
@@ -36,9 +36,9 @@ No toy calculators or copy-paste tutorials. Every project in this catalog is der
 
 ## Project Catalog
 
-> **Challenge Initialized — Day 001 Launching Next.**
->
-> The repository architecture, starter kits, automation CLI, and live GitHub Pages Portfolio Hub are live. Projects will appear here automatically as each day ships.
+| Day | Project | Pillar | Stack | Demo | Status |
+| :-: | :--- | :--- | :--- | :--- | :-: |
+| `001` | [**Multi-Tenant Socratic EdTech RAG & Vision-Routing Tutor**](projects/day-001-socratic-multitenant-edtech-rag/README.md) | AI Agents & RAG | `Python`, `LangGraph`, `RAG`, `Vision LLM` | Live App (`./run.sh`) | Shipped |
 
 ---
 
