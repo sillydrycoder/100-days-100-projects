@@ -25,10 +25,105 @@
     return data;
   }
 
+  function renderInline(escapedText) {
+    return escapedText
+      .replace(/`([^`]+)`/g, '<code class="md-code">$1</code>')
+      .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+      .replace(/\*([^*\n]+)\*/g, "<em>$1</em>");
+  }
+
+  function renderMarkup(raw) {
+    const src = String(raw ?? "").replace(/\r\n/g, "\n").trim();
+    if (!src) return "";
+
+    const lines = src.split("\n");
+    const out = [];
+    let i = 0;
+
+    while (i < lines.length) {
+      const line = lines[i].trim();
+      if (!line) {
+        i += 1;
+        continue;
+      }
+
+      // Display math block ($$ ... $$)
+      if (line.startsWith("$$")) {
+        const eqLines = [];
+        if (line === "$$" || !line.endsWith("$$") || line.length === 2) {
+          const first = line.slice(2).trim();
+          if (first) eqLines.push(first);
+          i += 1;
+          while (i < lines.length) {
+            const cur = lines[i].trim();
+            if (cur.endsWith("$$")) {
+              const tail = cur.slice(0, -2).trim();
+              if (tail) eqLines.push(tail);
+              i += 1;
+              break;
+            }
+            eqLines.push(cur);
+            i += 1;
+          }
+        } else {
+          eqLines.push(line.slice(2, -2).trim());
+          i += 1;
+        }
+        out.push(`<div class="md-math mono">${esc(eqLines.join(" "))}</div>`);
+        continue;
+      }
+
+      // Markdown table
+      if (line.startsWith("|") && line.endsWith("|")) {
+        const tblLines = [];
+        while (i < lines.length && lines[i].trim().startsWith("|") && lines[i].trim().endsWith("|")) {
+          tblLines.push(lines[i].trim());
+          i += 1;
+        }
+        const rows = tblLines
+          .filter((r) => !/^\|[\s:|-]+\|$/.test(r))
+          .map((r) => r.slice(1, -1).split("|").map((c) => renderInline(esc(c.trim()))));
+        if (rows.length > 0) {
+          const head = rows[0].map((c) => `<th>${c}</th>`).join("");
+          const body = rows.slice(1).map((r) => `<tr>${r.map((c) => `<td>${c}</td>`).join("")}</tr>`).join("");
+          out.push(`<div class="md-table-wrap"><table class="md-table"><thead><tr>${head}</tr></thead><tbody>${body}</tbody></table></div>`);
+        }
+        continue;
+      }
+
+      // Bullet list
+      if (/^[-*]\s+/.test(line)) {
+        const items = [];
+        while (i < lines.length && /^[-*]\s+/.test(lines[i].trim())) {
+          items.push(`<li>${renderInline(esc(lines[i].trim().replace(/^[-*]\s+/, "")))}</li>`);
+          i += 1;
+        }
+        out.push(`<ul class="md-list">${items.join("")}</ul>`);
+        continue;
+      }
+
+      // Paragraph
+      const para = [];
+      while (
+        i < lines.length &&
+        lines[i].trim() &&
+        !lines[i].trim().startsWith("$$") &&
+        !(lines[i].trim().startsWith("|") && lines[i].trim().endsWith("|")) &&
+        !/^[-*]\s+/.test(lines[i].trim())
+      ) {
+        para.push(renderInline(esc(lines[i].trim())));
+        i += 1;
+      }
+      out.push(`<p class="md-p">${para.join("<br/>")}</p>`);
+    }
+
+    return out.join("");
+  }
+
   function appendChat(role, meta, text) {
     const div = document.createElement("div");
     div.className = `msg ${role}`;
-    div.innerHTML = `<div class="msg-meta">${esc(meta)}</div><div>${esc(text)}</div>`;
+    div.innerHTML = `<div class="msg-meta">${esc(meta)}</div><div class="md-body">${renderMarkup(text)}</div>`;
     const log = $("chat-log");
     log.appendChild(div);
     log.scrollTop = log.scrollHeight;
@@ -44,7 +139,7 @@
       parts.push(`
         <div class="cite-item">
           <div class="cite-title">ATTACHED DIAGRAM · ${esc(res.vision_structured.title || "Class Diagram")}</div>
-          <div class="cite-excerpt">${esc(res.vision_structured.key_concept || "")}</div>
+          <div class="cite-excerpt md-body">${renderMarkup(res.vision_structured.key_concept || "")}</div>
         </div>
       `);
     }
@@ -54,7 +149,7 @@
         parts.push(`
           <div class="cite-item">
             <div class="cite-title">${esc(c.label)}</div>
-            <div class="cite-excerpt">${esc(c.excerpt)}</div>
+            <div class="cite-excerpt md-body">${renderMarkup(c.excerpt)}</div>
           </div>
         `);
       });
