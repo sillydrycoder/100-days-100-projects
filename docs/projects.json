@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-24T10:28:27Z",
+  "repo": {
+    "owner": "sillydrycoder",
+    "name": "100-days-100-projects",
+    "branch": "main",
+    "github_url": "https://github.com/sillydrycoder/100-days-100-projects",
+    "pages_url": "https://sillydrycoder.github.io/100-days-100-projects/",
+    "author": "Muhammad Ali",
+    "handle": "sillydrycoder",
+    "headline": "AI Automation & Full-Stack Engineer | Python, LangGraph, RAG, Laravel",
+    "positioning": "Production AI agent workflows, RAG pipelines, and full-stack SaaS architecture \u2014 reliable backend systems instead of fragile prototypes.",
+    "target_total": 100
+  },
+  "demo_tiers": {
+    "tier-1-static": {
+      "label": "Tier 1: Live Static",
+      "short": "Live Static",
+      "description": "Hosted free on GitHub Pages, Cloudflare Pages, or Vercel + local runner."
+    },
+    "tier-2-free-app": {
+      "label": "Tier 2: Free Cloud App",
+      "short": "Live App",
+      "description": "Hosted free on Hugging Face Spaces, Streamlit Cloud, or Render + local DEMO_MODE runner."
+    },
+    "tier-3-local-visual": {
+      "label": "Tier 3: Local + Visual Proof",
+      "short": "Local + Visual",
+      "description": "1-command local runner (run.sh / Docker Compose) + architecture diagram, screenshots & GIF."
+    }
+  },
+  "stats": {
+    "target_total": 100,
+    "completed_count": 0,
+    "in_progress_count": 0,
+    "total_tracked": 0,
+    "completion_pct": 0.0,
+    "next_day": 1,
+    "last_completed": null,
+    "categories": [
+      {
+        "slug": "ai-agents-rag",
+        "name": "AI Agents, LangGraph & RAG Pipelines",
+        "short_name": "AI Agents & RAG",
+        "target": 25,
+        "completed": 0,
+        "in_progress": 0,
+        "remaining": 25,
+        "pct": 0.0,
+        "accent": "#10b981",
+        "default_template": "python-ai-rag",
+        "skills": [
+          "LangGraph",
+          "LangChain",
+          "RAG",
+          "Artificial Intelligence",
+          "Python",
+          "FastAPI"
+        ],
+        "description": "Multi-agent orchestration, hybrid RAG retrieval, structured document extraction, and LLM tool-calling systems with offline DEMO_MODE."
+      },
+      {
+        "slug": "fullstack-saas-nextjs",
+        "name": "Full-Stack SaaS (React/Next.js + Python)",
+        "short_name": "Full-Stack SaaS",
+        "target": 20,
+        "completed": 0,
+        "in_progress": 0,
+        "remaining": 20,
+        "pct": 0.0,
+        "accent": "#3b82f6",
+        "default_template": "fullstack-saas",
+        "skills": [
+          "React",
+          "Next.js",
+          "FastAPI",
+          "Django",
+          "Flask",
+          "SaaS Development"
+        ],
+        "description": "Multi-tenant SaaS dashboards, RBAC portals, and production REST/async APIs pairing React/Next.js with FastAPI, Django, or Flask."
+      },
+      {
+        "slug": "laravel-saas-backend",
+        "name": "Laravel & PHP Backend Systems",
+        "short_name": "Laravel Backend",
+        "target": 16,
+        "completed": 0,
+        "in_progress": 0,
+        "remaining": 16,
+        "pct": 0.0,
+        "accent": "#f43f5e",
+        "default_template": "laravel-saas",
+        "skills": [
+          "Laravel",
+          "PHP",
+          "SaaS Development",
+          "Web Development"
+        ],
+        "description": "Production Laravel REST APIs, queued jobs, Livewire/Inertia portals, multi-tenant backends, and custom CMS/e-commerce extensions."
+      },
+      {
+        "slug": "stripe-api-integrations",
+        "name": "Stripe Billing, Webhooks & API Middleware",
+        "short_name": "Stripe & APIs",
+        "target": 14,
+        "completed": 0,
+        "in_progress": 0,
+        "remaining": 14,
+        "pct": 0.0,
+        "accent": "#8b5cf6",
+        "default_template": "api-stripe-integration",
+        "skills": [
+          "Stripe",
+          "API Integration",
+          "SaaS Development",
+          "Python",
+          "FastAPI"
+        ],
+        "description": "Usage/token-based Stripe billing ledgers, idempotent webhook processors, signature verification, and resilient third-party API sync pipelines."
+      },
+      {
+        "slug": "automation-scraping",
+        "name": "Task Automation, Scrapers & Bots",
+        "short_name": "Automation & Bots",
+        "target": 13,
+        "completed": 0,
+        "in_progress": 0,
+        "remaining": 13,
+        "pct": 0.0,
+        "accent": "#f59e0b",
+        "default_template": "automation-scraper",
+        "skills": [
+          "Task Automation",
+          "Python",
+          "Node.js",
+          "Playwright",
+          "Puppeteer"
+        ],
+        "description": "Reliable Python and Node.js browser bots, anti-bot extraction pipelines, scheduled ETL jobs, and local mock-HTML test suites."
+      },
+      {
+        "slug": "ecommerce-data-ml",
+        "name": "E-Commerce Intelligence, Data Science & ML",
+        "short_name": "E-Commerce & ML",
+        "target": 7,
+        "completed": 0,
+        "in_progress": 0,
+        "remaining": 7,
+        "pct": 0.0,
+        "accent": "#06b6d4",
+        "default_template": "python-ai-rag",
+        "skills": [
+          "Python",
+          "Data Science",
+          "Machine Learning",
+          "Pandas",
+          "scikit-learn"
+        ],
+        "description": "Seller intelligence dashboards, pricing and demand forecasting models, churn/lead scoring pipelines, and interactive analytics apps."
+      },
+      {
+        "slug": "realtime-mobile-tools",
+        "name": "Realtime Collaboration, Flutter & Dev Tools",
+        "short_name": "Realtime & Tools",
+        "target": 5,
+        "completed": 0,
+        "in_progress": 0,
+        "remaining": 5,
+        "pct": 0.0,
+        "accent": "#ec4899",
+        "default_template": "static-web",
+        "skills": [
+          "WebSockets",
+          "Flutter",
+          "Dart",
+          "Software Development"
+        ],
+        "description": "Realtime collaborative rooms (WebSockets/SSE/Matrix), Flutter prototypes, browser extensions, and developer CLI/admin utilities."
+      }
+    ],
+    "recommended_next_categories": [
+      "ai-agents-rag",
+      "fullstack-saas-nextjs",
+      "laravel-saas-backend"
+    ]
+  },
+  "projects": []
+}

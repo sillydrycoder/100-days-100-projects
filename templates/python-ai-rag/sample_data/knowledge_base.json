@@ -1,0 +1,12 @@
+[
+  {
+    "id": "doc-001",
+    "title": "Enterprise SLA & Escalation Policy",
+    "content": "Priority-1 billing or production API outages must be escalated to Tier-2 engineering within 15 minutes."
+  },
+  {
+    "id": "doc-002",
+    "title": "API Token Rate Limits",
+    "content": "Pro plans include 250,000 monthly tokens with automatic soft-cap alerts at 80% utilization."
+  }
+]

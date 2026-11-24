@@ -1,0 +1,6 @@
+{
+  "tenants": [
+    { "id": "org_alpha", "name": "Alpha Logistics", "plan": "pro", "seats": 12 },
+    { "id": "org_beta", "name": "Beta Commerce", "plan": "enterprise", "seats": 45 }
+  ]
+}

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Muhammad Ali (sillydrycoder) — 100 Days, 100 Production Demos</title>
+  <meta
+    name="description"
+    content="Production AI agent workflows, LangGraph & RAG pipelines, Laravel & Next.js SaaS platforms, Stripe billing systems, and automation bots by Muhammad Ali."
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand-block">
+        <div class="eyebrow">
+          <span class="pulse-dot" aria-hidden="true"></span>
+          <span>100 DAYS · 100 PRODUCTION DEMOS</span>
+        </div>
+        <h1 id="author-name">Muhammad Ali</h1>
+        <p id="author-headline" class="headline">
+          AI Automation &amp; Full-Stack Engineer | Python, LangGraph, RAG, Laravel
+        </p>
+        <p id="author-positioning" class="positioning">
+          Production AI agent workflows, RAG pipelines, and full-stack SaaS architecture — reliable backend systems instead of fragile prototypes.
+        </p>
+        <div class="header-actions">
+          <a id="repo-link" class="btn btn-primary" href="https://github.com/sillydrycoder/100-days-100-projects" target="_blank" rel="noopener">
+            View Repository on GitHub
+          </a>
+          <a id="profile-link" class="btn btn-secondary" href="https://github.com/sillydrycoder" target="_blank" rel="noopener">
+            @sillydrycoder Profile
+          </a>
+          <button id="copy-filter-btn" class="btn btn-ghost" type="button">
+            Copy Shareable Filter Link
+          </button>
+        </div>
+      </div>
+
+      <aside class="progress-panel" aria-label="Challenge progress">
+        <div class="progress-top">
+          <span class="progress-label">PORTFOLIO PROGRESS</span>
+          <span id="progress-fraction" class="mono progress-fraction">0 / 100</span>
+        </div>
+        <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress-bar-wrap">
+          <div id="progress-fill" class="progress-fill" style="width: 0%;"></div>
+        </div>
+        <div class="progress-meta">
+          <div>
+            <span class="meta-k">Next Build</span>
+            <strong id="next-day-val" class="mono">DAY 001</strong>
+          </div>
+          <div>
+            <span class="meta-k">Service Pillars</span>
+            <strong id="pillar-count-val" class="mono">7</strong>
+          </div>
+          <div>
+            <span class="meta-k">Last Updated</span>
+            <strong id="updated-val" class="mono">—</strong>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <section class="section-block" aria-labelledby="pillars-heading">
+      <div class="section-head">
+        <div>
+          <h2 id="pillars-heading">Service Pillars</h2>
+          <p class="section-sub">Click any pillar to filter demos and generate a shareable client link.</p>
+        </div>
+        <button id="reset-filters-btn" class="btn btn-ghost btn-sm hidden" type="button">
+          Reset Filters
+        </button>
+      </div>
+      <div id="pillars-grid" class="pillars-grid"></div>
+    </section>
+
+    <section class="controls-bar" aria-label="Filter projects">
+      <div class="search-wrap">
+        <input
+          id="search-input"
+          type="search"
+          placeholder="Search by stack, problem, or domain (e.g. LangGraph, Stripe, Laravel, FastAPI, Playwright)..."
+          autocomplete="off"
+        />
+      </div>
+      <div class="select-wrap">
+        <select id="tier-select" aria-label="Filter by demo tier">
+          <option value="all">All Demo Tiers</option>
+          <option value="tier-1-static">Tier 1: Live Static</option>
+          <option value="tier-2-free-app">Tier 2: Free Cloud App</option>
+          <option value="tier-3-local-visual">Tier 3: Local + Visual Proof</option>
+        </select>
+      </div>
+      <div class="results-counter mono" id="results-counter">0 demos</div>
+    </section>
+
+    <section aria-labelledby="catalog-heading">
+      <h2 id="catalog-heading" class="sr-only">Project Catalog</h2>
+      <div id="projects-grid" class="projects-grid"></div>
+      <div id="empty-state" class="empty-state hidden"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>
+        Engineered by <strong>Muhammad Ali</strong> (<a href="https://github.com/sillydrycoder" target="_blank" rel="noopener">@sillydrycoder</a>) · Zero-build static hub synced automatically via <code>scripts/sync.py</code>.
+      </p>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+{
+  "repo": {
+    "owner": "sillydrycoder",
+    "name": "100-days-100-projects",
+    "branch": "main",
+    "github_url": "https://github.com/sillydrycoder/100-days-100-projects",
+    "pages_url": "https://sillydrycoder.github.io/100-days-100-projects/",
+    "author": "Muhammad Ali",
+    "handle": "sillydrycoder",
+    "headline": "AI Automation & Full-Stack Engineer | Python, LangGraph, RAG, Laravel",
+    "positioning": "Production AI agent workflows, RAG pipelines, and full-stack SaaS architecture — reliable backend systems instead of fragile prototypes.",
+    "target_total": 100
+  },
+  "demo_tiers": {
+    "tier-1-static": {
+      "label": "Tier 1: Live Static",
+      "short": "Live Static",
+      "description": "Hosted free on GitHub Pages, Cloudflare Pages, or Vercel + local runner."
+    },
+    "tier-2-free-app": {
+      "label": "Tier 2: Free Cloud App",
+      "short": "Live App",
+      "description": "Hosted free on Hugging Face Spaces, Streamlit Cloud, or Render + local DEMO_MODE runner."
+    },
+    "tier-3-local-visual": {
+      "label": "Tier 3: Local + Visual Proof",
+      "short": "Local + Visual",
+      "description": "1-command local runner (run.sh / Docker Compose) + architecture diagram, screenshots & GIF."
+    }
+  },
+  "categories": [
+    {
+      "slug": "ai-agents-rag",
+      "name": "AI Agents, LangGraph & RAG Pipelines",
+      "short_name": "AI Agents & RAG",
+      "target": 25,
+      "default_template": "python-ai-rag",
+      "accent": "#10b981",
+      "skills": ["LangGraph", "LangChain", "RAG", "Artificial Intelligence", "Python", "FastAPI"],
+      "description": "Multi-agent orchestration, hybrid RAG retrieval, structured document extraction, and LLM tool-calling systems with offline DEMO_MODE."
+    },
+    {
+      "slug": "fullstack-saas-nextjs",
+      "name": "Full-Stack SaaS (React/Next.js + Python)",
+      "short_name": "Full-Stack SaaS",
+      "target": 20,
+      "default_template": "fullstack-saas",
+      "accent": "#3b82f6",
+      "skills": ["React", "Next.js", "FastAPI", "Django", "Flask", "SaaS Development"],
+      "description": "Multi-tenant SaaS dashboards, RBAC portals, and production REST/async APIs pairing React/Next.js with FastAPI, Django, or Flask."
+    },
+    {
+      "slug": "laravel-saas-backend",
+      "name": "Laravel & PHP Backend Systems",
+      "short_name": "Laravel Backend",
+      "target": 16,
+      "default_template": "laravel-saas",
+      "accent": "#f43f5e",
+      "skills": ["Laravel", "PHP", "SaaS Development", "Web Development"],
+      "description": "Production Laravel REST APIs, queued jobs, Livewire/Inertia portals, multi-tenant backends, and custom CMS/e-commerce extensions."
+    },
+    {
+      "slug": "stripe-api-integrations",
+      "name": "Stripe Billing, Webhooks & API Middleware",
+      "short_name": "Stripe & APIs",
+      "target": 14,
+      "default_template": "api-stripe-integration",
+      "accent": "#8b5cf6",
+      "skills": ["Stripe", "API Integration", "SaaS Development", "Python", "FastAPI"],
+      "description": "Usage/token-based Stripe billing ledgers, idempotent webhook processors, signature verification, and resilient third-party API sync pipelines."
+    },
+    {
+      "slug": "automation-scraping",
+      "name": "Task Automation, Scrapers & Bots",
+      "short_name": "Automation & Bots",
+      "target": 13,
+      "default_template": "automation-scraper",
+      "accent": "#f59e0b",
+      "skills": ["Task Automation", "Python", "Node.js", "Playwright", "Puppeteer"],
+      "description": "Reliable Python and Node.js browser bots, anti-bot extraction pipelines, scheduled ETL jobs, and local mock-HTML test suites."
+    },
+    {
+      "slug": "ecommerce-data-ml",
+      "name": "E-Commerce Intelligence, Data Science & ML",
+      "short_name": "E-Commerce & ML",
+      "target": 7,
+      "default_template": "python-ai-rag",
+      "accent": "#06b6d4",
+      "skills": ["Python", "Data Science", "Machine Learning", "Pandas", "scikit-learn"],
+      "description": "Seller intelligence dashboards, pricing and demand forecasting models, churn/lead scoring pipelines, and interactive analytics apps."
+    },
+    {
+      "slug": "realtime-mobile-tools",
+      "name": "Realtime Collaboration, Flutter & Dev Tools",
+      "short_name": "Realtime & Tools",
+      "target": 5,
+      "default_template": "static-web",
+      "accent": "#ec4899",
+      "skills": ["WebSockets", "Flutter", "Dart", "Software Development"],
+      "description": "Realtime collaborative rooms (WebSockets/SSE/Matrix), Flutter prototypes, browser extensions, and developer CLI/admin utilities."
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "demo_users": [
+    { "email": "admin@demo.local", "role": "owner" },
+    { "email": "member@demo.local", "role": "analyst" }
+  ],
+  "notes": "Seeded automatically via DatabaseSeeder when running ./run.sh."
+}

@@ -1,0 +1,55 @@
+# Secrets & local environment files (NEVER ignore .env.example)
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+credentials.json
+service-account*.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+
+# Node / JS / Next.js
+node_modules/
+.next/
+out/
+.nuxt/
+.turbo/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# PHP / Laravel
+vendor/
+storage/logs/*.log
+bootstrap/cache/*.php
+!bootstrap/cache/.gitkeep
+
+# Local databases & generated demo runtime outputs
+*.sqlite
+*.sqlite3
+*.db
+!sample_data/*.sqlite
+!sample_data/*.db
+projects/*/output/
+projects/*/tmp/
+
+# OS & Editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo

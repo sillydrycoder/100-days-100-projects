@@ -1,0 +1,29 @@
+[
+  {
+    "id": "evt_demo_001",
+    "type": "checkout.session.completed",
+    "data": {
+      "tenant_id": "org_alpha",
+      "tokens_purchased": 50000,
+      "amount_cents": 2900
+    }
+  },
+  {
+    "id": "evt_demo_001",
+    "type": "checkout.session.completed",
+    "data": {
+      "tenant_id": "org_alpha",
+      "tokens_purchased": 50000,
+      "amount_cents": 2900
+    }
+  },
+  {
+    "id": "evt_demo_002",
+    "type": "invoice.paid",
+    "data": {
+      "tenant_id": "org_beta",
+      "tokens_purchased": 200000,
+      "amount_cents": 9900
+    }
+  }
+]

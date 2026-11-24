@@ -1,0 +1,7 @@
+{
+  "title": "{{TITLE}}",
+  "items": [
+    { "id": 1, "label": "Sample Item A", "status": "active" },
+    { "id": 2, "label": "Sample Item B", "status": "queued" }
+  ]
+}
