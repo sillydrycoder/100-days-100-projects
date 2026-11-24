@@ -17,10 +17,10 @@
 
 ```mermaid
 flowchart LR
-    T["Target Source\n(Live URL / Local Mock HTML)"] --> F["Fetcher / Browser Worker\n(Retry + Backoff)"]
-    F --> P["Deterministic Parser\n& Schema Validator"]
+    T["Target Source<br/>(Live URL / Local Mock HTML)"] --> F["Fetcher / Browser Worker<br/>(Retry + Backoff)"]
+    F --> P["Deterministic Parser<br/>& Schema Validator"]
     P --> D["Deduplicator"]
-    D --> E["Clean Exports\n(JSON + CSV)"]
+    D --> E["Clean Exports<br/>(JSON + CSV)"]
 ```
 
 ## Key Capabilities

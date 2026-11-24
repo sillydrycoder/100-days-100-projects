@@ -17,10 +17,10 @@
 
 ```mermaid
 flowchart LR
-    EXT["Stripe / Third-Party\nWebhook Emitter"] --> VER["HMAC Signature\nVerifier"]
-    VER --> IDEM{"Idempotency\nEvent Store"}
+    EXT["Stripe / Third-Party<br/>Webhook Emitter"] --> VER["HMAC Signature<br/>Verifier"]
+    VER --> IDEM{"Idempotency<br/>Event Store"}
     IDEM -- "Duplicate Event" --> DUP["200 OK (No-Op)"]
-    IDEM -- "New Event" --> LEDGER["Token / Billing Ledger\n& Domain Sync"]
+    IDEM -- "New Event" --> LEDGER["Token / Billing Ledger<br/>& Domain Sync"]
     LEDGER --> AUDIT["Structured Audit Trail"]
 ```
 

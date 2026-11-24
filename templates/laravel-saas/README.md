@@ -19,8 +19,8 @@
 flowchart LR
     C["Client / Livewire / Inertia UI"] --> R["Laravel Routes & Middleware"]
     R --> S["Domain Service Layer"]
-    S --> DB["SQLite (Local Demo)\n/ MySQL or Postgres (Prod)"]
-    S --> Q["Database Queue Worker\n(Async Jobs & Webhooks)"]
+    S --> DB["SQLite (Local Demo)<br/>/ MySQL or Postgres (Prod)"]
+    S --> Q["Database Queue Worker<br/>(Async Jobs & Webhooks)"]
 ```
 
 ## Key Capabilities

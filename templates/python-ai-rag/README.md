@@ -18,10 +18,10 @@
 ```mermaid
 flowchart LR
     U["User / Webhook Request"] --> R["Router / State Graph"]
-    R --> K["Hybrid Retriever\n(sample_data / Vector Store)"]
-    K --> G["LLM Reasoning Node\n(OpenAI / Gemini / Mock DEMO_MODE)"]
-    G --> V{"Confidence &\nSchema Guard"}
-    V -- "Pass" --> O["Cited Structured Response\n+ Audit Log"]
+    R --> K["Hybrid Retriever<br/>(sample_data / Vector Store)"]
+    K --> G["LLM Reasoning Node<br/>(OpenAI / Gemini / Mock DEMO_MODE)"]
+    G --> V{"Confidence &<br/>Schema Guard"}
+    V -- "Pass" --> O["Cited Structured Response<br/>+ Audit Log"]
     V -- "Low Confidence" --> H["Human Escalation Queue"]
 ```
 

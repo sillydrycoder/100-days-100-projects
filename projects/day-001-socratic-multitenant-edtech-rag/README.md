@@ -25,13 +25,13 @@ This reference implementation demonstrates a **production-ready multi-tenant Soc
 
 ```mermaid
 flowchart LR
-    U["Student / Admin UI"] --> PII["1. FERPA/COPPA\nPII Redactor"]
-    PII --> VIS["2. SHA-256\nVision-to-JSON Cache"]
-    VIS --> RT["3. Cost-Aware\nModel Router"]
-    RT --> RAG["4. Tenant-Scoped\nHybrid RAG (BM25+Dense)"]
-    RAG --> SOC["5. Socratic Hint\nGenerator (1 -> 2 -> 3)"]
-    SOC --> GRD["6. Anti-Spoiler\nPedagogy Guard"]
-    GRD --> AUD["7. Redacted Audit\n& Cost Telemetry"]
+    U["Student / Admin UI"] --> PII["1. FERPA/COPPA<br/>PII Redactor"]
+    PII --> VIS["2. SHA-256<br/>Vision-to-JSON Cache"]
+    VIS --> RT["3. Cost-Aware<br/>Model Router"]
+    RT --> RAG["4. Tenant-Scoped<br/>Hybrid RAG (BM25 + Dense)"]
+    RAG --> SOC["5. Socratic Hint<br/>Generator (Hints 1-3)"]
+    SOC --> GRD["6. Anti-Spoiler<br/>Pedagogy Guard"]
+    GRD --> AUD["7. Redacted Audit<br/>and Cost Telemetry"]
 ```
 
 ### 1. Multi-Tenancy Without DevOps Sprawl (`schema/postgres_rls.sql` + `src/storage.py`)

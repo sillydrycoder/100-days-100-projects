@@ -17,7 +17,7 @@
 
 ```mermaid
 flowchart LR
-    DATA["Seed / Mock Dataset\n(sample_data/demo_data.json)"] --> UI["Interactive Browser App\n(HTML / CSS / JS)"]
+    DATA["Seed / Mock Dataset<br/>(sample_data/demo_data.json)"] --> UI["Interactive Browser App<br/>(HTML / CSS / JS)"]
     UI --> STATE["Client State & Filters"]
     STATE --> EXPORT["Actionable Output / Export"]
 ```

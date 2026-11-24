@@ -17,9 +17,9 @@
 
 ```mermaid
 flowchart LR
-    FE["Frontend UI\n(React / Next.js)"] --> API["Backend API\n(FastAPI / Django / Flask)"]
+    FE["Frontend UI<br/>(React / Next.js)"] --> API["Backend API<br/>(FastAPI / Django / Flask)"]
     API --> AUTH["Tenant & RBAC Guard"]
-    API --> DB["SQLite (Local Demo)\n/ PostgreSQL (Prod)"]
+    API --> DB["SQLite (Local Demo)<br/>/ PostgreSQL (Prod)"]
     API --> WORKER["Async Background Jobs"]
 ```
 
